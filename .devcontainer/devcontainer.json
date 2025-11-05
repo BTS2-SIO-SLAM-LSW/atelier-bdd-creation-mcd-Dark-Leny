@@ -1,0 +1,29 @@
+{
+  "name": "BTS_SIO2_SLAM_atelier_passage_du_MCD_au_MLD_template",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "forwardPorts": [80],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "jebbs.plantuml",
+        "kaishuu0123.vscode-erdiagram",
+        "ms-azuretools.vscode-docker",
+        "mtxr.sqltools",
+        "ms-python.python"
+      ]
+    }
+  },
+
+  "postCreateCommand": "echo '✅ Environnement prêt. Le bureau graphique va démarrer.'",
+
+  "postAttachCommand": "nohup /startup.sh > /tmp/startup.log 2>&1 &",
+
+  "remoteUser": "root"
+}
